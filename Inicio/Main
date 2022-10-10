@@ -1,0 +1,95 @@
+import java.util.Scanner;
+import java.io.*;
+
+class Main {
+  public static void main(String[] args) throws FileNotFoundException, IOException{
+    Scanner sc = new Scanner(System.in);
+    Stack nombreProducto = new Stack(); 
+    Array<String> codigoProducto = new Array<String>();
+    List precioCompra = new List();
+    Queue cantidad = new Queue();
+    List precioVenta = new List();
+    Array<String> lote = new Array<String>();
+    Stack fecha = new Stack();
+    System.out.println("Registro entrada de producto");
+
+    
+    BufferedReader bf = new BufferedReader (new FileReader("Diezmilstr.txt"));
+    String linea;
+
+    long startTime = System.nanoTime();
+    while((linea=bf.readLine())!=null){        
+      nombreProducto.push(linea);
+    }
+    long endTime = System.nanoTime();
+
+    BufferedReader af = new BufferedReader (new FileReader("Diezmilstr.txt"));
+    String linea1;
+
+    long startTime1 = System.nanoTime();
+    while((linea1=af.readLine())!=null){        
+      codigoProducto.add(linea1);
+    }
+    long endTime1 = System.nanoTime();
+
+    BufferedReader lf = new BufferedReader (new FileReader("Diezmilstr.txt"));
+    String linea2;
+    
+    long startTime2 = System.nanoTime();    
+    while((linea2=lf.readLine())!=null){        
+      precioCompra.addFirst(linea2);
+    }
+    long endTime2 = System.nanoTime();
+      
+    BufferedReader pf = new BufferedReader (new FileReader("Diezmilstr.txt"));
+    String linea3;
+
+    long startTime3 = System.nanoTime();
+    while((linea3=pf.readLine())!=null){        
+      cantidad.enqueue(linea3);
+    }
+    long endTime3 = System.nanoTime();
+
+    BufferedReader ff = new BufferedReader (new FileReader("Diezmilstr.txt"));
+    String linea4;
+
+    long startTime4 = System.nanoTime();
+    while((linea4=ff.readLine())!=null){        
+      precioVenta.addFirst(linea4);
+    }
+    long endTime4 = System.nanoTime();
+
+    BufferedReader cf = new BufferedReader (new FileReader("Diezmilstr.txt"));
+    String linea5;
+
+    long startTime5 = System.nanoTime();
+    while((linea5=cf.readLine())!=null){        
+      lote.add(linea5);
+    }
+    long endTime5 = System.nanoTime();
+
+    BufferedReader sf = new BufferedReader (new FileReader("Diezmilstr.txt"));
+    String linea6;
+
+    long startTime6 = System.nanoTime();
+    while((linea6=sf.readLine())!=null){        
+      fecha.push(linea6);
+    }
+    long endTime6 = System.nanoTime();
+
+    long Totaltime = endTime - startTime ;
+    long Totaltime1 = endTime1 - startTime1;
+    long Totaltime2 = endTime2 - startTime2;
+    long Totaltime3 = endTime3 - startTime3;
+    long Totaltime4 = endTime4 - startTime4;
+    long Totaltime5 = endTime5 - startTime5;
+    long Totaltime6 = endTime6 - startTime6;
+    System.out.println(Totaltime);
+    System.out.println(Totaltime1);
+    System.out.println(Totaltime2);
+    System.out.println(Totaltime3);
+    System.out.println(Totaltime4);
+    System.out.println(Totaltime5);
+    System.out.println(Totaltime6);
+  }
+}
