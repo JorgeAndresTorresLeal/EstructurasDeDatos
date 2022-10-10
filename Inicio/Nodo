@@ -1,0 +1,22 @@
+class Nodo{
+    private Object elemento;
+    private Nodo siguiente;
+
+public Nodo (Object elem, Nodo sig){
+    elemento = elem;
+    siguiente = sig;
+}
+public Object getElemento(){
+    return elemento;
+}
+public Nodo getSig(){
+    return siguiente;
+}
+public void setElemento(Object elem){
+    elemento = elem;
+}
+public void setSig(Nodo sig){
+    siguiente = sig;
+}
+    
+}
