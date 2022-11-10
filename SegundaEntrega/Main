@@ -1,0 +1,87 @@
+import java.util.Scanner;
+import java.io.*;
+
+class Main {
+  public static void main(String[] args) throws FileNotFoundException, IOException{
+    Scanner sc = new Scanner(System.in);
+    BST<String> nombreProducto = new BST<>(); 
+    AVL<String> codigoProducto = new AVL<>();
+    BinaryHeap precioCompra = new BinaryHeap(10000);
+    
+    System.out.println("Registro entrada de producto");
+
+    
+    BufferedReader bf = new BufferedReader (new FileReader("diez.txt"));
+    String linea;
+
+    long startTime = System.nanoTime();
+    while((linea=bf.readLine())!=null){        
+      nombreProducto.add(linea);
+    }
+    long endTime = System.nanoTime();
+
+    BufferedReader af = new BufferedReader (new FileReader("diez.txt"));
+    String linea1;
+
+    long startTime1 = System.nanoTime();
+    while((linea1=af.readLine())!=null){        
+      codigoProducto.insert(linea1);
+    }
+    long endTime1 = System.nanoTime();
+
+    File f = new File("diez.txt");
+    int linea2;
+    
+    long startTime2 = System.nanoTime();    
+    try  (Scanner entrada = new Scanner(f)) {
+      while (entrada.hasNextInt()) { 
+                linea2 = entrada.nextInt();
+                precioCompra.insert(linea2);
+            }
+    long endTime2 = System.nanoTime();
+
+    long Totaltime = (endTime - startTime);
+    long Totaltime1 = (endTime1 - startTime1);
+    long Totaltime2 = (endTime2 - startTime2);
+
+    System.out.println(nombreProducto.size());
+    System.out.println(codigoProducto.size());
+    
+
+    long startTime3 = System.nanoTime(); 
+    for(int i = nombreProducto.size()-1;i>=0;i--){
+      nombreProducto.remove(Integer.toString(i));
+    }
+    long endTime3 = System.nanoTime(); 
+
+    long startTime4 = System.nanoTime(); 
+    for(int i = codigoProducto.size()-1;i>=0;i--){
+      codigoProducto.remove(Integer.toString(i));
+    }
+    long endTime4 = System.nanoTime();
+
+    long startTime5 = System.nanoTime(); 
+    for(int i = precioCompra.heapSize - 1;i>=0;i--){
+      precioCompra.delete(i);
+    }
+    long endTime5 = System.nanoTime(); 
+
+      
+    long Totaltime4 = endTime4 - startTime4;
+    long Totaltime3 = endTime3 - startTime3;
+    long Totaltime5 = endTime5 - startTime5;
+    
+    System.out.println(Totaltime);
+    
+    System.out.println(Totaltime1);
+    
+    System.out.println(Totaltime2);
+    System.out.println(Totaltime3);
+    System.out.println(Totaltime4);
+    System.out.println(Totaltime5);
+    nombreProducto.traverseBST();
+    System.out.println(codigoProducto.size());
+    System.out.println(precioCompra.heapSize);
+  }
+}
+}
