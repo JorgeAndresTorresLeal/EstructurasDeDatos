@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="857.0" style="-fx-background-color: #37a8c8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sistema_administrativo_de_tienda.controlador.ReporteController">
+   <children>
+      <AnchorPane layoutX="18.0" layoutY="19.0" prefHeight="372.0" prefWidth="806.0" style="-fx-background-color: White; -fx-border-color: Black;">
+         <children>
+            <Button fx:id="regresar" layoutX="701.0" layoutY="1.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="18.0" prefWidth="124.0" style="-fx-background-color: wHITE;" text="REGRESAR" />
+            <Line endX="716.6000366210938" endY="-1.1444091796875E-5" layoutX="103.0" layoutY="26.0" startX="-100.0" />
+            <Label layoutX="14.0" layoutY="5.0" text="REPORTE" />
+            <HBox layoutX="296.0" layoutY="313.0" />
+            <AnchorPane layoutX="14.0" layoutY="36.0" prefHeight="314.0" prefWidth="167.0" style="-fx-border-color: Black;">
+               <children>
+                  <TextField fx:id="Nombreproducto" layoutX="14.0" layoutY="32.0" prefHeight="26.0" prefWidth="130.0" />
+                  <Label layoutX="16.0" layoutY="14.0" text="Nombre de producto" />
+                  <Label layoutX="17.0" layoutY="70.0" prefHeight="18.0" prefWidth="124.0" text="Código" />
+                  <TextField fx:id="Codigo" layoutX="14.0" layoutY="88.0" prefHeight="26.0" prefWidth="130.0" />
+                  <Label layoutX="14.0" layoutY="124.0" text="Desde" />
+                  <DatePicker fx:id="FechaInicial" layoutX="14.0" layoutY="144.0" prefHeight="26.0" prefWidth="130.0" />
+                  <Label layoutX="14.0" layoutY="177.0" text="Hasta" />
+                  <DatePicker fx:id="FechaFinal" layoutX="14.0" layoutY="195.0" prefHeight="26.0" prefWidth="130.0" />
+                  <Button fx:id="buscar" layoutX="38.0" layoutY="273.0" mnemonicParsing="false" onAction="#BuscarReporte" prefHeight="26.0" prefWidth="91.0" text="BUSCAR" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tablaVendidos" layoutX="187.0" layoutY="37.0" prefHeight="314.0" prefWidth="637.0">
+              <columns>
+                <TableColumn fx:id="ColNombre" prefWidth="76.80006408691406" text="Nombre" />
+                <TableColumn fx:id="ColCode" prefWidth="78.39996337890625" text="Código" />
+                  <TableColumn fx:id="ColCantidad" prefWidth="71.20001220703125" text="Cantidad" />
+                  <TableColumn fx:id="ColprecioC" prefWidth="100.79998779296875" text="Precio compra" />
+                  <TableColumn fx:id="ColprecioV" prefWidth="107.199951171875" text="Precio venta" />
+                  <TableColumn fx:id="ColFechaVenta" prefWidth="126.40008544921875" text="Fecha de venta" />
+                  <TableColumn fx:id="ColLote" prefWidth="75.0" text="Lote" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
