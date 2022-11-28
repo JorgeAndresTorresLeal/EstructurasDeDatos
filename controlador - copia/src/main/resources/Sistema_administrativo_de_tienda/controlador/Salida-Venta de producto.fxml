@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="775.0" style="-fx-background-color: #37a8c8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sistema_administrativo_de_tienda.controlador.VentaProductoController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="458.0" prefWidth="746.0" style="-fx-background-color: White; -fx-border-color: Black;">
+         <children>
+            <Button fx:id="regresar" layoutX="615.0" layoutY="1.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="18.0" prefWidth="124.0" style="-fx-background-color: wHITE;" text="REGRESAR" />
+            <Line endX="637.3999633789062" endY="-3.814697265625E-6" layoutX="103.0" layoutY="26.0" startX="-100.0" />
+            <Label layoutX="14.0" layoutY="5.0" text="SALIDA/VENTA DE PRODUCTO" />
+            <HBox layoutX="296.0" layoutY="313.0" />
+            <TableView fx:id="TablaVenta" layoutX="14.0" layoutY="133.0" prefHeight="259.0" prefWidth="718.0">
+              <columns>
+                <TableColumn fx:id="Nombre" prefWidth="141.5999412536621" text="Nombre" />
+                <TableColumn fx:id="Codigo" prefWidth="114.39997863769531" text="Código" />
+                  <TableColumn fx:id="Cantidad" prefWidth="110.4000244140625" text="Cantidad" />
+                  <TableColumn fx:id="Precio" prefWidth="107.20001220703125" text="Precio" />
+                  <TableColumn fx:id="Razon" prefWidth="90.39996337890625" text="Razon" />
+                  <TableColumn fx:id="FechaVenta" prefWidth="158.39996337890625" text="Fecha de venta/salida" />
+              </columns>
+            </TableView>
+            <Button fx:id="Terminar" layoutX="622.0" layoutY="417.0" mnemonicParsing="false" onAction="#TerminarVenta" prefHeight="26.0" prefWidth="109.0" text="TERMINAR" />
+            <Label layoutX="14.0" layoutY="400.0" text="Precio total de la compra" />
+            <Label layoutX="172.0" layoutY="400.0" text="Dinero recibido" />
+            <Label layoutX="306.0" layoutY="400.0" text="Dinero a devolver" />
+            <TextField fx:id="DineroRecibido" layoutX="172.0" layoutY="416.0" prefHeight="26.0" prefWidth="110.0" style="-fx-border-color: Black;" />
+            <TextField fx:id="DineroADevolver" editable="false" layoutX="306.0" layoutY="416.0" prefHeight="26.0" prefWidth="110.0" style="-fx-border-color: Black;" />
+            <TextField fx:id="Preciototal" editable="false" layoutX="14.0" layoutY="416.0" prefHeight="27.0" prefWidth="133.0" style="-fx-border-color: Black;" />
+            <TextField fx:id="entradaCodigo" layoutX="41.0" layoutY="68.0" prefHeight="26.0" prefWidth="118.0" />
+            <TextField fx:id="Lote" layoutX="179.0" layoutY="68.0" prefHeight="26.0" prefWidth="94.0" />
+            <TextField fx:id="EntradaCantidad" layoutX="297.0" layoutY="68.0" prefHeight="26.0" prefWidth="110.0" />
+            <Button fx:id="Agregar" layoutX="615.0" layoutY="68.0" mnemonicParsing="false" onAction="#Agregar" prefHeight="26.0" prefWidth="82.0" text="AGREGAR" />
+            <Label layoutX="41.0" layoutY="51.0" text="Codigo" />
+            <Label layoutX="178.0" layoutY="51.0" text="Lote" />
+            <Label layoutX="296.0" layoutY="51.0" text="Cantidad" />
+            <Label layoutX="423.0" layoutY="51.0" text="Razon" />
+            <TextField fx:id="EntradaRazon" layoutX="423.0" layoutY="68.0" prefHeight="26.0" prefWidth="110.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

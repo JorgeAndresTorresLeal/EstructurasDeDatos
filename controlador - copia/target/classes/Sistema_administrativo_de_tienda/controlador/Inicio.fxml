@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #37a8c8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sistema_administrativo_de_tienda.controlador.InicioController">
+   <children>
+      <AnchorPane layoutX="200.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: White; -fx-border-color: Black;">
+         <children>
+            <Label layoutX="45.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.6" prefWidth="109.6" text="Nombre de usuario" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="68.0" layoutY="82.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.6" prefWidth="64.0" text="Contraseña">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="NombreDeUsuario" layoutX="24.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.6" prefWidth="151.2" style="-fx-background-color: #f3f3ef; -fx-border-color: Black;" />
+            <PasswordField fx:id="Contraseña" layoutX="24.0" layoutY="100.0" style="-fx-background-color: #f3f3ef; -fx-border-color: Black;" />
+            <Button fx:id="Ingresar" layoutX="62.0" layoutY="159.0" mnemonicParsing="false" onAction="#Verificar" prefHeight="26.0" prefWidth="74.0" text="INGRESAR" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
